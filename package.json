@@ -11,6 +11,7 @@
     "prebuild": "rm index.js index.d.ts",
     "build": "tsc",
     "test": "npm run build",
+    "prepublishOnly": "test -s index.js",
     "fmt": "npx prettier --write ."
   },
   "repository": {
