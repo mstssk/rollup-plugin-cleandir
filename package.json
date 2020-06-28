@@ -3,8 +3,11 @@
   "version": "0.0.1",
   "description": "Rollup Plugin for empty output directories.",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prebuild": "rm index.js index.d.ts",
+    "build": "tsc",
+    "test": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -23,6 +26,7 @@
   },
   "homepage": "https://github.com/mstssk/rollup-plugin-cleandir#readme",
   "devDependencies": {
+    "rollup": "^2.18.1",
     "typescript": "^3.9.5"
   },
   "dependencies": {
