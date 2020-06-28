@@ -16,3 +16,5 @@ jobs:
           prettier_command_prefix: npx
       - run: npm cit
         if: ${{ always() }}
+      - run: npm it
+        working-directory: ./example
