@@ -4,6 +4,9 @@
   "description": "Rollup Plugin for empty output directories.",
   "main": "index.js",
   "types": "index.d.ts",
+  "engines": {
+    "node": ">=12.12.0"
+  },
   "scripts": {
     "prebuild": "rm index.js index.d.ts",
     "build": "tsc",
