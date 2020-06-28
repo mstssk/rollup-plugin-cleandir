@@ -8,7 +8,7 @@
     "node": ">=12.12.0"
   },
   "scripts": {
-    "prebuild": "rm index.js index.d.ts",
+    "prebuild": "rm -f index.js index.d.ts",
     "build": "tsc",
     "test": "npm run build",
     "prepublishOnly": "test -s index.js",
