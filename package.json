@@ -32,5 +32,8 @@
   },
   "dependencies": {
     "@mstssk/cleandir": "^1.0.1"
+  },
+  "peerDependencies": {
+    "rollup": ">=1.0.0"
   }
 }
