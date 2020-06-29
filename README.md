@@ -1,6 +1,6 @@
 # rollup-plugin-cleandir
 
-![Test](https://github.com/mstssk/rollup-plugin-cleandir/workflows/Test/badge.svg)
+[![Test](https://github.com/mstssk/rollup-plugin-cleandir/workflows/Test/badge.svg)](https://github.com/mstssk/rollup-plugin-cleandir/actions?query=workflow%3ATest)
 [![npm version](https://badge.fury.io/js/rollup-plugin-cleandir.svg)](https://badge.fury.io/js/rollup-plugin-cleandir)
 
 🧹 Rollup plugin to Clean output directories before building.
