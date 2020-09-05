@@ -31,11 +31,11 @@
   },
   "homepage": "https://github.com/mstssk/rollup-plugin-cleandir#readme",
   "devDependencies": {
-    "rollup": "^2.18.1",
-    "typescript": "^3.9.5"
+    "rollup": "^2.26.10",
+    "typescript": "^4.0.2"
   },
   "dependencies": {
-    "@mstssk/cleandir": "^1.0.1"
+    "@mstssk/cleandir": "^1.0.2"
   },
   "peerDependencies": {
     "rollup": ">=1.0.0"
