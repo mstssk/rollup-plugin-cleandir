@@ -2,42 +2,42 @@
   "name": "rollup-plugin-cleandir",
   "version": "0.0.1",
   "description": "Rollup Plugin for empty output directories.",
-  "main": "index.js",
-  "types": "index.d.ts",
-  "engines": {
-    "node": ">=12.12.0"
-  },
-  "scripts": {
-    "prebuild": "rm -f index.js index.d.ts",
-    "build": "tsc",
-    "test": "npm run build",
-    "prepublishOnly": "test -s index.js",
-    "fmt": "npx prettier --write ."
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mstssk/rollup-plugin-cleandir.git"
-  },
   "keywords": [
     "clean",
     "directory",
     "rollup",
     "plugin"
   ],
-  "author": "mstssk",
-  "license": "MIT",
+  "homepage": "https://github.com/mstssk/rollup-plugin-cleandir#readme",
   "bugs": {
     "url": "https://github.com/mstssk/rollup-plugin-cleandir/issues"
   },
-  "homepage": "https://github.com/mstssk/rollup-plugin-cleandir#readme",
-  "devDependencies": {
-    "rollup": "^2.26.10",
-    "typescript": "^4.0.2"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mstssk/rollup-plugin-cleandir.git"
+  },
+  "license": "MIT",
+  "author": "mstssk",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "prebuild": "rm -f index.js index.d.ts",
+    "build": "tsc",
+    "fmt": "npx prettier --write .",
+    "prepublishOnly": "test -s index.js",
+    "test": "npm run build"
   },
   "dependencies": {
     "@mstssk/cleandir": "^1.0.2"
   },
+  "devDependencies": {
+    "rollup": "^2.26.10",
+    "typescript": "^4.0.2"
+  },
   "peerDependencies": {
     "rollup": ">=1.0.0"
+  },
+  "engines": {
+    "node": ">=12.12.0"
   }
 }
