@@ -20,6 +20,10 @@
   "author": "mstssk",
   "main": "index.js",
   "types": "index.d.ts",
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ],
   "scripts": {
     "prebuild": "rm -f index.js index.d.ts",
     "build": "tsc",
