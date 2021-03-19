@@ -40,8 +40,5 @@
   },
   "peerDependencies": {
     "rollup": ">=1.0.0"
-  },
-  "engines": {
-    "node": ">=12.12.0"
   }
 }
