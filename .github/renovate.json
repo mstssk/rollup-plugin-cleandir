@@ -1,9 +1,4 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base", "schedule:weekends", ":disablePeerDependencies"],
-  "rangeStrategy": "bump",
-  "timezone": "Asia/Tokyo",
-  "stabilityDays": 3,
-  "prCreation": "not-pending",
-  "labels": ["dependencies"]
+  "extends": ["github>viibar/renovate-config", ":disablePeerDependencies"]
 }
