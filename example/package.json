@@ -9,7 +9,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "rollup": "^2.52.4",
+    "rollup": "^2.52.6",
     "rollup-plugin-cleandir": "file:.."
   }
 }
