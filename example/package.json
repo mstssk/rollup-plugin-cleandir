@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "rollup --config"
+    "pretest": "head -c 128 /dev/urandom > dist/shouldBeDeletedFile",
+    "test": "rollup --config",
+    "posttest": "test ! -e dist/shouldBeDeletedFile && echo ok"
   },
   "author": "",
   "license": "MIT",
