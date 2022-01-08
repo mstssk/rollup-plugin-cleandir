@@ -1,0 +1,17 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "head -c 128 /dev/urandom > dist/shouldBeDeletedFile",
+    "test": "rollup --config",
+    "posttest": "test ! -e dist/shouldBeDeletedFile && echo ok"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "rollup": "^2.63.0",
+    "rollup-plugin-cleandir": "file:.."
+  }
+}

@@ -19,3 +19,6 @@ jobs:
         if: ${{ always() }}
       - run: npm it
         working-directory: ./example
+      # for backward compatibility
+      - run: npm it
+        working-directory: ./example-v1
