@@ -18,6 +18,9 @@ jobs:
         if: ${{ always() }}
       - run: npm it
         working-directory: ./example
+      # for forward compatibility
+      - run: npm it
+        working-directory: ./example-rollup-v3
       # for backward compatibility
       - run: npm it
         working-directory: ./example-v1
