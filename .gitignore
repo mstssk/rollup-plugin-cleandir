@@ -2,6 +2,10 @@
 *.js
 *.d.ts
 
+# Allow *.config.js, *.test.js, etc...
+!*.config.js
+!*.test.js
+
 # Logs
 logs
 *.log

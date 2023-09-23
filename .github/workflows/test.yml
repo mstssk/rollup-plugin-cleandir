@@ -15,6 +15,11 @@ jobs:
           prettier: true
           prettier_command_prefix: npx
       - run: npm cit
+      - uses: actions/upload-artifact@v3
         if: ${{ always() }}
+        with:
+          name: coverage
+          path: coverage
       - run: npm it
+        if: ${{ always() }}
         working-directory: ./example
