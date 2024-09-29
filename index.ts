@@ -1,24 +1,24 @@
-import type { Plugin } from "rollup";
+import type { Plugin, FunctionPluginHooks } from "rollup";
 import { cleandir as _cleandir } from "@mstssk/cleandir";
+
+type PluginHookName = keyof FunctionPluginHooks;
+type Order = "pre" | "post";
+type Options = { hook: PluginHookName; order: Order };
 
 /**
  * Clean output directory.
  * @param dirs [Optional]
  * @returns {Plugin} Rollup Plugin
  */
-export function cleandir(dirs?: string | string[]): Plugin {
-  const useOutputOptionsDir = dirs == null;
+export function cleandir(dirs: string | string[], options?: Options): Plugin {
+  const hook: PluginHookName = options?.hook ?? "buildStart";
+  const order: Order = options?.order ?? "pre";
   return {
     name: "cleandir",
-    buildStart() {
-      if (!useOutputOptionsDir) {
-        return _cleandir(dirs);
-      }
-    },
-    renderStart(outputOptions) {
-      if (useOutputOptionsDir && outputOptions.dir) {
-        return _cleandir(outputOptions.dir);
-      }
+    [hook]: {
+      order,
+      sequential: true,
+      handler: () => _cleandir(dirs),
     },
   };
 }

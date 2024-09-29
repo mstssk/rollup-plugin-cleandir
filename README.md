@@ -13,27 +13,26 @@ $ npm install --save-dev rollup-plugin-cleandir
 
 ## Usage
 
-In rollup.config.js:
-
 ```js
 import { cleandir } from "rollup-plugin-cleandir";
+
+const OUT_DIR = "./dist";
 
 export default {
   input: ["index.js"],
   output: {
-    dir: "./dist",
+    dir: OUT_DIR,
     format: "es",
   },
-  plugins: [cleandir()],
+  plugins: [cleandir(OUT_DIR)],
 };
 ```
 
-### Clean before building.
+You can also specify `hook` and `order` options.
 
-rollup-plugin-cleandir@v2 runs when [renderStart](https://rollupjs.org/guide/en/#output-generation-hooks) hook by default.
-
-If you want to clean before building([buildStart](https://rollupjs.org/guide/en/#build-hooks) hook), set output directory path to `cleandir` function.
-
-e.g. `cleandir("./dist")`
-
-This is same of rollup-plugin-cleandir@v1 behavior.
+```js
+export default {
+  // ...
+  plugins: [cleandir(OUT_DIR, { hook: "options", order: "pre" })],
+};
+```
