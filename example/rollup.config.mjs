@@ -1,4 +1,4 @@
-const { cleandir } = require("rollup-plugin-cleandir");
+import { cleandir } from "rollup-plugin-cleandir";
 
 const OUT_DIR = "./dist";
 
