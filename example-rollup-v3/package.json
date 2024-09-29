@@ -11,7 +11,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "rollup": "beta",
+    "rollup": "backports-3",
     "rollup-plugin-cleandir": "file:.."
   }
 }
