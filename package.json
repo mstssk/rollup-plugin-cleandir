@@ -28,6 +28,7 @@
     "prebuild": "rm -f index.js index.d.ts",
     "build": "tsc",
     "fmt": "npx prettier --write .",
+    "lint": "npx prettier --check .",
     "prepublishOnly": "test -s index.js",
     "test": "npm run build"
   },

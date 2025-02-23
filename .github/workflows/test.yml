@@ -10,10 +10,7 @@ jobs:
         with:
           node-version: "lts/*"
           cache: "npm"
-      - uses: wearerequired/lint-action@v2
-        with:
-          prettier: true
-          prettier_command_prefix: npx
+      - run: npm run lint
       - run: npm cit
         if: ${{ always() }}
       - run: npm it
