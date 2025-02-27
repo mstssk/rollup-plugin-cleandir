@@ -12,6 +12,6 @@ jobs:
           cache: "npm"
       - run: npm run lint
       - run: npm cit
-        if: ${{ always() }}
+        if: ${{ !cancelled() }}
       - run: npm it
         working-directory: ./example
