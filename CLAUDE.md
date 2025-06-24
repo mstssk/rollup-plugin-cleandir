@@ -1,47 +1,47 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+このファイルは、このリポジトリでコードを扱う際のClaude Code (claude.ai/code) へのガイダンスを提供します。
 
-## Common Commands
+## 共通コマンド
 
-### Build and Development
-- `npm run build` - Compiles TypeScript source to JavaScript and generates type definitions
-- `npm run prebuild` - Removes existing build artifacts (index.js, index.d.ts)
-- `npm test` - Runs the test suite (currently runs build as test)
+### ビルドと開発
+- `npm run build` - TypeScriptソースをJavaScriptにコンパイルし、型定義を生成
+- `npm run prebuild` - 既存のビルド成果物を削除 (index.js, index.d.ts)
+- `npm test` - テストスイートを実行 (現在はビルドをテストとして実行)
 
-### Code Quality
-- `npm run lint` - Checks code formatting with Prettier
-- `npm run fmt` - Formats code with Prettier
+### コード品質
+- `npm run lint` - Prettierでコードフォーマットをチェック
+- `npm run fmt` - Prettierでコードをフォーマット
 
-### Publishing
-- `npm run prepublishOnly` - Validates that index.js exists before publishing
+### 公開
+- `npm run prepublishOnly` - 公開前にindex.jsが存在することを検証
 
-## Architecture
+## アーキテクチャ
 
-This is a Rollup plugin that provides directory cleaning functionality. The architecture is straightforward:
+これはディレクトリクリーニング機能を提供するRollupプラグインです。アーキテクチャは分かりやすいものです：
 
-### Core Structure
-- **index.ts** - Main plugin implementation, exports `cleandir` function
-- **package.json** - Defines build scripts and dependencies
-- **example/** - Contains usage example with rollup.config.mjs
+### コア構造
+- **index.ts** - メインプラグイン実装、`cleandir`関数をエクスポート
+- **package.json** - ビルドスクリプトと依存関係を定義
+- **example/** - rollup.config.mjsを使用した使用例を含む
 
-### Plugin Implementation
-The plugin wraps the `@mstssk/cleandir` library and integrates it into Rollup's build process:
+### プラグイン実装
+プラグインは`@mstssk/cleandir`ライブラリをラップし、Rollupのビルドプロセスに統合します：
 
-- Uses TypeScript with strict type checking
-- Targets ES2022 with CommonJS module output
-- Generates both JavaScript and TypeScript declaration files
-- Plugin hooks into Rollup's build lifecycle (default: `buildStart` hook)
-- Supports configurable hooks and execution order
+- 厳密な型チェックを持つTypeScriptを使用
+- ES2022をターゲットとしてCommonJSモジュール出力
+- JavaScriptとTypeScript宣言ファイルの両方を生成
+- Rollupのビルドライフサイクルにフック（デフォルト: `buildStart`フック）
+- 設定可能なフックと実行順序をサポート
 
-### Key Dependencies
-- `@mstssk/cleandir` - Core directory cleaning functionality
-- Peer dependency on `rollup` >=4.0.0
-- TypeScript for development and type generation
+### 主要な依存関係
+- `@mstssk/cleandir` - コアディレクトリクリーニング機能
+- `rollup` >=4.0.0のピア依存関係
+- 開発と型生成用のTypeScript
 
-### Build Process
-1. TypeScript compilation removes old artifacts first (`prebuild`)
-2. Compiles TypeScript to CommonJS with type declarations
-3. Output files: `index.js` and `index.d.ts`
+### ビルドプロセス
+1. TypeScriptコンパイルは最初に古い成果物を削除（`prebuild`）
+2. TypeScriptを型宣言付きCommonJSにコンパイル
+3. 出力ファイル: `index.js`と`index.d.ts`
 
-The plugin is designed to be lightweight and focused on a single responsibility: cleaning output directories during Rollup builds.
+プラグインは軽量で単一責任に集中するよう設計されています：Rollupビルド中の出力ディレクトリのクリーニング。
