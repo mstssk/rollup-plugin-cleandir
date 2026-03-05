@@ -33,7 +33,7 @@
     "test": "npm run build"
   },
   "dependencies": {
-    "@mstssk/cleandir": "^2.0.0"
+    "@mstssk/cleandir": "^3.0.0"
   },
   "devDependencies": {
     "rollup": "^4.54.0",
