@@ -25,11 +25,9 @@
     "index.d.ts"
   ],
   "scripts": {
-    "prebuild": "rm -f index.js index.d.ts",
-    "build": "tsc",
+    "build": "rm -f index.js index.d.ts && tsc",
     "fmt": "npx prettier --write .",
     "lint": "npx prettier --check .",
-    "prepublishOnly": "test -s index.js",
     "test": "npm run build"
   },
   "dependencies": {
