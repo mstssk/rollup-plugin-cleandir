@@ -34,7 +34,7 @@
     "@mstssk/cleandir": "^3.0.0"
   },
   "devDependencies": {
-    "rollup": "^4.60.0",
+    "rollup": "^4.62.2",
     "typescript": "^5.9.3"
   },
   "peerDependencies": {
