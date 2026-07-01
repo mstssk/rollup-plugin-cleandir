@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "rollup": "^4.62.2",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.3"
   },
   "peerDependencies": {
     "rollup": ">=4.0.0"
